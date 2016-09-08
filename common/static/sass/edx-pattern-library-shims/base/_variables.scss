@@ -133,6 +133,9 @@ $uxpl-blue-hover-active: darken($uxpl-blue-base, 7%); // wcag2a compliant
 $uxpl-green-base: rgba(0, 129, 0, 1); // wcag2a compliant
 $uxpl-green-hover-active: lighten($uxpl-green-base, 7%); // wcag2a compliant
 
+$uxpl-gray-base: rgb(65, 65, 65);
+$uxpl-gray-background: rgb(217, 217, 217);
+
 
 // Alert styles
 $error-color: rgb(203, 7, 18) !default;

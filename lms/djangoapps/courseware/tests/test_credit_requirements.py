@@ -162,12 +162,10 @@ class ProgressPageCreditRequirementsTest(SharedModuleStoreTestCase):
 
         response = self._get_progress_page()
         # Verify the requirements are shown only if the user is in a credit-eligible mode.
-        classes = ('credit-eligibility', 'eligibility-heading')
+        classes = ('credit-eligibility', 'hd')
         method = self.assertContains if is_requirement_displayed else self.assertNotContains
 
         for _class in classes:
-            print _class
-            print classes
             method(response, _class)
 
     def _get_progress_page(self):

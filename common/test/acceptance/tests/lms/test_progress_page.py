@@ -273,12 +273,12 @@ class ExplicitGradedFieldTest(ProgressPageBaseTest):
         with self._logged_in_session():
             self.assertEqual(self._get_scores(), [(0, 1)])
             self.assertEqual(self._get_section_score(), (0, 1))
-            self.assertTrue(self.progress_page.detail_graph_contains("Homework 1 - Test Subsection 1 - 0% (0/1)"))
+            self.assertTrue(self.progress_page.text_on_page("Homework 1 - Test Subsection 1 - 0% (0/1)"))
             self.courseware_page.visit()
             self._answer_problem_correctly()
             self.assertEqual(self._get_scores(), [(1, 1)])
             self.assertEqual(self._get_section_score(), (1, 1))
-            self.assertTrue(self.progress_page.detail_graph_contains("Homework 1 - Test Subsection 1 - 100% (1/1)"))
+            self.assertTrue(self.progress_page.text_on_page("Homework 1 - Test Subsection 1 - 100% (1/1)"))
 
         self._set_policy_for_subsection("Not Graded")
 
@@ -286,7 +286,7 @@ class ExplicitGradedFieldTest(ProgressPageBaseTest):
             self.progress_page.visit()
             self.assertEqual(self._get_scores(), [(1, 1)])
             self.assertEqual(self._get_section_score(), (1, 1))
-            self.assertFalse(self.progress_page.detail_graph_contains("Homework 1 - Test Subsection 1"))
+            self.assertFalse(self.progress_page.text_on_page("Homework 1 - Test Subsection 1"))
 
     def _set_policy_for_subsection(self, policy):
         with self._logged_in_session(staff=True):

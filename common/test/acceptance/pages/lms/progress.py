@@ -67,10 +67,10 @@ class ProgressPage(CoursePage):
         # Retrieve the scores for the section
         return self._section_scores(chapter_index, section_index)
 
-    def detail_graph_contains(self, text):
+    def text_on_page(self, text):
         """
-        Return a list of names of the assignments
-        that appear on the grade detail graph.
+        Return whether the given text appears
+        on the page.
         """
         return text in self.q(css=".view-in-course").html[0]
 

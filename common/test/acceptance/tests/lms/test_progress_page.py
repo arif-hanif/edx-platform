@@ -265,6 +265,10 @@ class PersistentGradesTest(ProgressPageBaseTest):
 
 
 class ExplicitGradedFieldTest(ProgressPageBaseTest):
+    """
+    Tests changing a subsection's 'graded' field
+    and the effect it has on the progress page.
+    """
     def setUp(self):
         super(ExplicitGradedFieldTest, self).setUp()
         self._set_policy_for_subsection("Homework")
@@ -289,6 +293,10 @@ class ExplicitGradedFieldTest(ProgressPageBaseTest):
             self.assertFalse(self.progress_page.text_on_page("Homework 1 - Test Subsection 1"))
 
     def _set_policy_for_subsection(self, policy):
+        """
+        Set the grading policy for the
+        subsection in the test.
+        """
         with self._logged_in_session(staff=True):
             self.course_outline.visit()
             modal = self.course_outline.section_at(0).subsection_at(0).edit()

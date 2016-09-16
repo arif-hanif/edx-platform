@@ -47,11 +47,6 @@ from django.utils.http import urlquote_plus
                     <a class="instructor-info-action studio-view" href="${studio_url | h}">${_("View Grading in studio")}</a>
                 </div>
                 % endif
-                <!-- <div class="progress-certificates">
-                    <h4 class="hd hd-3 progress-certificates-title">
-                        ${_("Course Progress for Student '{username}' ({email})").format(username=student.username, email=student.email) | h}
-                    </h4>
-                </div> -->
                 %if certificate_data:
                 <div class="wrapper-msg wrapper-auto-cert">
                     <div id="errors-info" class="errors-info"></div>

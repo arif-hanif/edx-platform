@@ -76,7 +76,7 @@ Feature: LMS.LTI component
   | False              | 10     | True      | True      |
   And I submit answer to LTI 1 question
   And I click on the "Progress" tab
-  Then I see text "Problem Scores: 5/10"
+  Then I see text "5/10"
   And I see graph with total progress "5%"
 
   #9
@@ -113,7 +113,7 @@ Feature: LMS.LTI component
   Then I see LTI component progress with text "(10.0 points possible)"
   Then in the LTI component I do not see feedback
   And I click on the "Progress" tab
-  Then I see text "Problem Scores: 0/10"
+  Then I see text "0/10"
   And I see graph with total progress "0%"
   Then I click on the "Instructor" tab
   And I click the "Student Admin" button

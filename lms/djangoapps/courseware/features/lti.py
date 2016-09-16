@@ -327,7 +327,7 @@ def check_progress(_step, text):
 @step('I see graph with total progress "([^"]*)"$')
 def see_graph(_step, progress):
     selector = 'grade-detail-graph'
-    xpath = '//[@id="{parent}"]//[text()="{progress}"]'.format(
+    xpath = '//div[@id="{parent}"]//div[text()="{progress}"]'.format(
         parent=selector,
         progress=progress,
     )
